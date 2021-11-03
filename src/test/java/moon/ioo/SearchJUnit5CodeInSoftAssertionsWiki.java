@@ -22,14 +22,12 @@ public class SearchJUnit5CodeInSoftAssertionsWiki {
         // Открыть страницу Selenide в Github https://github.com/selenide/selenide
         open("https://github.com/selenide/selenide");
         // Перейти в раздел Wiki проекта
-        $("#repository-container-header").$("nav").$("li", 5).click();
+        $("#wiki-tab").click();
         // Убедится, что в списке страниц (Pages) есть страница SoftAssertions
         $(".js-wiki-more-pages-link").click();
         $("#wiki-pages-box").$(withText("SoftAssertions")).click();
         // Открыть страницу SoftAssertions, проверить что внутри есть пример кода для JUnit5
         $("#wiki-body")
                 .shouldHave(text("JUnit5 extension - com.codeborne.selenide.junit5.SoftAssertsExtension"));
-        sleep(5000);
-
     }
 }
